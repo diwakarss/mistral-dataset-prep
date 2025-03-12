@@ -1,0 +1,25 @@
+# Default configuration for Mistral-7B dataset preparation
+
+# Keys in the input data
+keys:
+  instruction: "instruction"  # Key for the instruction field
+  output: "output"           # Key for the output field
+  input: "input"             # Optional key for the input context field
+
+# Text cleaning options
+text_cleaning:
+  lowercase: false           # Whether to convert text to lowercase
+  remove_urls: true          # Whether to remove URLs from text
+  max_length: null           # Maximum length for text fields (null for no limit)
+
+# Validation options
+validation:
+  min_instruction_length: 3   # Minimum length for instructions
+  max_instruction_length: 2048 # Maximum length for instructions
+  min_output_length: 1        # Minimum length for outputs
+  max_output_length: 4096     # Maximum length for outputs
+  check_instruction_quality: true # Whether to check instruction quality
+
+# Dataset splitting options
+val_size: 0.1                 # Proportion of data to use for validation
+seed: 42                      # Random seed for reproducibility 
